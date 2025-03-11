@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayee's Data Science Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f9fc;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: #003366;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #66b2ff;
+        }
+        .container {
+            width: 85%;
+            margin: 120px auto 50px;
+        }
+        section {
+            padding: 50px;
+            border-radius: 15px;
+            margin: 40px 0;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #003366;
+        }
+        .profile-content h1 {
+            margin: 0;
+            color: #003366;
+        }
+        .profile-content p {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        .skills h2, .skills h3, h2, h3 {
+            color: #003366;
+        }
+        .skills p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .projects h3 {
+            margin-top: 0;
+        }
+        .project-item {
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #003366;
+            background: #f0f4f8;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .project-item:hover {
+            transform: scale(1.05);
+        }
+        .contact a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            background: #003366;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .contact a:hover {
+            background: #66b2ff;
+        }
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #003366;
+            color: white;
+            border: none;
+            padding: 14px 18px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#profile">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="profile" id="profile">
+        <img src="/images/passport pic.jpeg" alt="Godfred">
+        <div class="profile-content">
+            <h1>Hello, I'm Godfred</h1>
+            <p>Data Scientist | Machine Learning Engineer | Economic Data Analyst</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>I’m a Data Professional with extensive experience managing large datasets across various formats. I specialize in data engineering, machine learning, business intelligence, and data analytics, transforming complex data into valuable insights that drive informed business decisions and strategic growth.</p>
+        <p>I am passionate about continuous learning and staying current with emerging trends in data science. My mission is to leverage data-driven solutions to solve real-world business challenges and help organizations turn raw data into powerful, actionable insights.</p>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>Technical Skills</h2>
+
+        <h3>Programming & Scripting</h3>
+        <p>Python, SQL, Excel VBA, DAX</p>
+
+        <h3>Data Science & Analytics</h3>
+        <p>Data Cleaning, Exploratory Data Analysis (EDA), Statistical Analysis, Predictive Analytics, Machine Learning Model Development and Deployment</p>
+
+        <h3>Data Engineering</h3>
+        <p>Building Scalable Data Pipelines, ETL Processes, Data Integration</p>
+
+        <h3>Business Intelligence & Visualization</h3>
+        <p>Power BI, Matplotlib, Seaborn, Excel Dashboards and PivotTables</p>
+
+        <h3>Tools & Technologies</h3>
+        <p>Git & GitHub, Flask, Jupyter Notebooks</p>
+
+        <h3>Soft Skills</h3>
+        <p>Data Storytelling, Communication of Insights, Problem-Solving, Team Collaboration</p>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>Data Science Projects</h2>
+        <div class="project-item">
+            <h3>Pneumonia Detection Model</h3>
+            <p>A deep learning model that detects pneumonia from chest X-ray images with high accuracy.</p>
+            <a href="https://github.com/yourusername/imageclassifier" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-item">
+            <h3>Personal Budget Tracker</h3>
+            <p>A Flask web app for tracking income and expenses with real-time visualizations.</p>
+            <a href="https://github.com/yourusername/budget-tracker" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-item">
+            <h3>Customer Behavior Prediction</h3>
+            <p>Machine learning model predicting customer purchasing behavior from transactional data.</p>
+            <a href="https://github.com/yourusername/customer-behavior" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <a href="mailto:your-email@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    </section>
+
+</div>
+
+<footer>
+    © 2025 Godfred | All Rights Reserved
+</footer>
+
+<button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+<script>
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        sections.forEach(section => {
+            if (scrollY > section.offsetTop - 600) {
+                section.style.opacity = 1;
+                section.style.transform = 'translateY(0)';
+            }
+        });
+        document.getElementById('scrollTopBtn').style.display = scrollY > 400 ? 'block' : 'none';
+    });
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
