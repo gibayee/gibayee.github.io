@@ -46,15 +46,11 @@
             margin: 40px 0;
             background: white;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
         }
         .profile {
             display: flex;
             align-items: center;
             gap: 40px;
-            text-align: left;
         }
         .profile img {
             width: 180px;
@@ -62,23 +58,8 @@
             border-radius: 50%;
             border: 5px solid #003366;
         }
-        .profile-content h1 {
-            margin: 0;
+        h2, h3 {
             color: #003366;
-        }
-        .profile-content p {
-            margin-top: 10px;
-            font-size: 1.1em;
-        }
-        .skills h2, .skills h3, h2, h3 {
-            color: #003366;
-        }
-        .skills p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        .projects h3 {
-            margin-top: 0;
         }
         .project-item {
             padding: 20px;
@@ -91,15 +72,30 @@
         .project-item:hover {
             transform: scale(1.05);
         }
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .project-links a {
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background: #003366;
+            color: white;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        .project-links a:hover {
+            background: #66b2ff;
+        }
         .contact a {
             display: inline-block;
             margin: 10px;
             padding: 12px 25px;
-            border: none;
             border-radius: 50px;
             background: #003366;
             color: white;
-            font-weight: 500;
             text-decoration: none;
             transition: all 0.3s;
         }
@@ -112,20 +108,6 @@
             text-align: center;
             padding: 20px;
         }
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #003366;
-            color: white;
-            border: none;
-            padding: 14px 18px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            display: none;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
     </style>
 </head>
 <body>
@@ -136,6 +118,7 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
@@ -144,7 +127,7 @@
 
     <section class="profile" id="profile">
         <img src="https://raw.githubusercontent.com/gibayee/gibayee.github.io/main/pneumonia_detection/images/passport%20pic.jpeg" alt="Godfred">
-        <div class="profile-content">
+        <div>
             <h1>Hello, I'm Godfred</h1>
             <p>Data Scientist | Machine Learning Engineer | Economic Data Analyst</p>
         </div>
@@ -152,38 +135,54 @@
 
     <section class="about" id="about">
         <h2>About Me</h2>
-        <p>I’m a Data Professional specializing in economic data science, machine learning, and business analytics. My passion is transforming raw data into meaningful insights that drive economic, business, and socio-economic decisions.</p>
-        <p>My goal is to become an Economic or Financial Data Scientist, focusing on AI-driven economic and financial modeling. I aim to develop innovative machine learning solutions to enhance financial analysis, risk assessment, and economic policy formulation.</p>
+        <p>I’m a Data Professional specializing in economic data science, business analytics, and machine learning engineering. My passion is transforming raw data into meaningful insights that drive economic and business decisions.</p>
+        <p>My goal is to become an Economic or Financial Data Scientist, focusing on quantitative research, financial forecasting, and AI-driven economic modeling.</p>
     </section>
 
     <section class="skills" id="skills">
         <h2>Technical Skills</h2>
-
+        
         <h3>Programming & Scripting</h3>
         <p>Python, SQL, Excel VBA, DAX</p>
-
+        
         <h3>Data Science & Analytics</h3>
-        <p>Data Cleaning, Exploratory Data Analysis (EDA), Predictive Analytics, Machine Learning Model Development</p>
-
+        <p>Data Cleaning, Exploratory Data Analysis (EDA), Statistical Analysis, Predictive Analytics, Machine Learning Model Development and Deployment</p>
+        
         <h3>Data Engineering</h3>
         <p>Building Scalable Data Pipelines, ETL Processes, Data Integration</p>
-
+        
         <h3>Business Intelligence & Visualization</h3>
-        <p>Power BI, Matplotlib, Seaborn, Excel Dashboards</p>
+        <p>Power BI, Matplotlib, Seaborn, Excel Dashboards and PivotTables</p>
+        
+        <h3>Tools & Technologies</h3>
+        <p>Git & GitHub, Flask, Jupyter Notebooks</p>
+        
+        <h3>Soft Skills</h3>
+        <p>Data Storytelling, Communication of Insights, Problem-Solving, Team Collaboration</p>
     </section>
 
     <section class="projects" id="projects">
-        <h2>Projects</h2>
+        <h2>Data Science Projects</h2>
         <div class="project-item">
             <h3>Pneumonia Detection Model</h3>
             <p>A deep learning model that detects pneumonia from chest X-ray images.</p>
-            <div style="margin-top: 10px;">
-                <a href="https://github.com/gibayee/gibayee.github.io/tree/main/pneumonia_detection" 
-                   target="_blank" style="display: inline-block; margin-right: 20px;">View on GitHub</a>
-                <a href="https://pneumonia-xray-detector.streamlit.app/" 
-                   target="_blank" style="display: inline-block;">View on Streamlit</a>
+            <div class="project-links">
+                <a href="https://github.com/gibayee/gibayee.github.io/tree/main/pneumonia_detection" target="_blank">View on GitHub</a>
+                <a href="https://pneumonia-xray-detector.streamlit.app/" target="_blank">View on Streamlit</a>
             </div>
         </div>
+    </section>
+
+    <section class="certifications" id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li><strong>Professional Certificate, Machine Learning</strong> – IBM: <a href="#" target="_blank">View Certificate</a></li>
+            <li><strong>Professional Certificate, Business Intelligence</strong> – Google: <a href="#" target="_blank">View Certificate</a></li>
+            <li><strong>Professional Certificate, Data Warehouse Engineer</strong> – IBM: <a href="#" target="_blank">View Certificate</a></li>
+            <li><strong>Specialization Certificate, Databases for Data Scientists</strong> – University of Colorado Boulder: <a href="#" target="_blank">View Certificate</a></li>
+            <li><strong>Certificate, Applied Data Science I: Scientific Computing & Python (with honors)</strong> – WorldQuant University: <a href="#" target="_blank">View Certificate</a></li>
+            <li><strong>Certificate, Macroeconometric Forecasting</strong> – IMF Institute of Capacity Development: <a href="#" target="_blank">View Certificate</a></li>
+        </ul>
     </section>
 
     <section class="contact" id="contact">
@@ -191,33 +190,10 @@
         <a href="mailto:gibayee@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/godfredbayee/" target="_blank">LinkedIn</a>
         <a href="https://github.com/gibayee" target="_blank">GitHub</a>
+        <a href="https://docs.google.com/document/d/1HgmiIXsxFHKHVVGFrtivtIkPvT7jD1z6/edit?usp=sharing" target="_blank">Resume</a>
     </section>
 
 </div>
 
 <footer>
-    © 2025 Godfred | All Rights Reserved
-</footer>
-
-<button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
-
-<script>
-    const sections = document.querySelectorAll('section');
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        sections.forEach(section => {
-            if (scrollY > section.offsetTop - 600) {
-                section.style.opacity = 1;
-                section.style.transform = 'translateY(0)';
-            }
-        });
-        document.getElementById('scrollTopBtn').style.display = scrollY > 400 ? 'block' : 'none';
-    });
-
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
-
-</body>
-</html>
+    © 2025 Godfred | All Rights
