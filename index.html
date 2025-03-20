@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bayee's Data Science Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -38,15 +40,47 @@
         }
         .container {
             width: 85%;
+            max-width: 1400px;
             margin: 120px auto 50px;
+            box-sizing: border-box;
         }
         section {
             padding: 50px;
             border-radius: 15px;
             margin: 40px 0;
             background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
+        /* Hero Section */
+        .hero {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            background: #66b2ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #003366;
+        }
+
+        /* Profile Section */
         .profile {
             display: flex;
             align-items: center;
@@ -61,52 +95,130 @@
         h2, h3 {
             color: #003366;
         }
-        .project-item {
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 5px solid #003366;
-            background: #f0f4f8;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .project-item:hover {
-            transform: scale(1.05);
-        }
-        .project-links {
+
+        /* Skills Section */
+        .skills-container {
             display: flex;
-            gap: 15px;
-            margin-top: 10px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .skills-column {
+            width: 48%;
+        }
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column;
+            }
+            .skills-column {
+                width: 100%;
+            }
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background: #f7f9fc;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .project-card img {
+            max-width: 100%;
+            border-radius: 10px;
         }
         .project-links a {
+            margin: 0 10px;
             text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            background: #003366;
-            color: white;
-            font-weight: 500;
-            transition: background 0.3s;
+            color: #003366;
         }
-        .project-links a:hover {
-            background: #66b2ff;
+
+        /* Certifications Section */
+        .certification-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        .certification-card {
+            background: #f7f9fc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px); /* Adjust width to fit 3 cards per row */
+            text-align: center;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .certification-card:nth-child(3n) {
+            margin-right: 0; /* Remove margin for the last card in each row */
+        }
+        @media (max-width: 768px) {
+            .certification-card {
+                width: calc(50% - 20px); /* Two cards per row on smaller screens */
+            }
+            .certification-card:nth-child(2n) {
+                margin-right: 0; /* Remove margin for the last card in each row */
+            }
+        }
+        @media (max-width: 480px) {
+            .certification-card {
+                width: 100%; /* One card per row on very small screens */
+            }
+        }
+
+        /* Contact Section */
         .contact a {
             display: inline-block;
             margin: 10px;
-            padding: 12px 25px;
-            border-radius: 50px;
-            background: #003366;
-            color: white;
             text-decoration: none;
-            transition: all 0.3s;
+            color: #003366;
         }
-        .contact a:hover {
-            background: #66b2ff;
+        .contact i {
+            margin-right: 5px;
         }
+
+        /* Footer */
         footer {
             background: #003366;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        /* Back-to-Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #003366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: none;
+            font-size: 20px;
+            line-height: 40px;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -115,7 +227,6 @@
 <header>
     <nav>
         <a href="#profile">Home</a>
-        <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#certifications">Certifications</a>
@@ -123,83 +234,171 @@
     </nav>
 </header>
 
+<section class="hero">
+    <div class="hero-content">
+        <h1>Data Science Meets Economic Insights</h1>
+        <p>Transforming raw data into actionable strategies through machine learning and analytics.</p>
+        <a href="#projects" class="cta-button">View My Work</a>
+    </div>
+</section>
+
 <div class="container">
 
-    <section class="profile" id="profile">
+    <!-- Profile Section -->
+    <section class="profile fade-in" id="profile">
         <img src="https://raw.githubusercontent.com/gibayee/gibayee.github.io/main/pneumonia_detection/images/passport%20pic.jpeg" alt="Godfred">
         <div>
             <h1>Hello, I'm Godfred</h1>
             <p>Data Scientist | Machine Learning Engineer | Economic Data Analyst</p>
+            <h2>About Me</h2>
+            <p>I’m a Data Professional specializing in economic data science, business analytics, and machine learning engineering. My passion is transforming raw data into meaningful insights that drive economic and business decisions.</p>
         </div>
     </section>
 
-    <section class="about" id="about">
-        <h2>About Me</h2>
-        <p>I’m a Data Professional specializing in economic data science, business analytics, and machine learning engineering. My passion is transforming raw data into meaningful insights that drive economic and business decisions.</p>
-        <p>My goal is to become an Economic or Financial Data Scientist, focusing on quantitative research, financial forecasting, and AI-driven economic modeling.</p>
-    </section>
-
-    <section class="skills" id="skills">
+    <!-- Skills Section -->
+    <section class="skills fade-in" id="skills">
         <h2>Technical Skills</h2>
-        
-        <h3>Programming & Scripting</h3>
-        <p>Python, SQL, Excel VBA, DAX</p>
-        
-        <h3>Data Science & Analytics</h3>
-        <p>Data Cleaning, Exploratory Data Analysis (EDA), Statistical Analysis, Predictive Analytics, Machine Learning Model Development and Deployment</p>
-        
-        <h3>Data Engineering</h3>
-        <p>Building Scalable Data Pipelines, ETL Processes, Data Integration</p>
-        
-        <h3>Business Intelligence & Visualization</h3>
-        <p>Power BI, Matplotlib, Seaborn, Excel Dashboards and PivotTables</p>
-        
-        <h3>Tools & Technologies</h3>
-        <p>Git & GitHub, Flask, Jupyter Notebooks</p>
-        
-        <h3>Soft Skills</h3>
-        <p>Data Storytelling, Communication of Insights, Problem-Solving, Team Collaboration</p>
-    </section>
-
-    <section class="projects" id="projects">
-        <h2>Data Science Projects</h2>
-        <div class="project-item">
-            <h3>Pneumonia Detection Model</h3>
-            <p>A deep learning model using Convolutional Neural Network (CNN) that detects pneumonia from chest X-ray images.</p>
-            <div class="project-links">
-                <a href="https://github.com/gibayee/gibayee.github.io/tree/main/pneumonia_detection" target="_blank">View on GitHub</a>
-                <a href="https://pneumonia-xray-detector.streamlit.app/" target="_blank">View on Streamlit</a>
+        <div class="skills-container">
+            <div class="skills-column">
+                <h3>Programming & Scripting</h3>
+                <p>Python, SQL, Excel VBA, DAX</p>
+                
+                <h3>Data Science & Analytics</h3>
+                <p>Data Cleaning, Exploratory Data Analysis (EDA), Statistical Analysis, Predictive Analytics, Machine Learning Model Development and Deployment</p>
+                
+                <h3>Data Engineering</h3>
+                <p>Building Scalable Data Pipelines, ETL Processes, Data Integration</p>
             </div>
-            <h3>Real Time Stock Market Price Prediction Model</h3>
-            <p>A deep learning model using Long Short-Term Memory (LSTM) to predict tomorrow's stock price.</p>
-            <div class="project-links">
-                <a href="https://github.com/gibayee/gibayee.github.io/tree/main/stock_price_prediction" target="_blank">View on GitHub</a>
-                <a href="https://stock-price-predictor-gibayee.streamlit.app/" target="_blank">View on Streamlit</a>
+            <div class="skills-column">
+                <h3>Business Intelligence & Visualization</h3>
+                <p>Power BI, Matplotlib, Seaborn, Excel Dashboards and PivotTables</p>
+                
+                <h3>Tools & Technologies</h3>
+                <p>Git & GitHub, Flask, Jupyter Notebooks</p>
+                
+                <h3>Soft Skills</h3>
+                <p>Data Storytelling, Communication of Insights, Problem-Solving, Team Collaboration</p>
             </div>
         </div>
     </section>
 
-    <section class="certifications" id="certifications">
-        <h2>Certifications</h2>
-        <ul>
-            <li><strong>Professional Certificate, Machine Learning</strong> – IBM: <a href="#" target="_blank">View Certificate</a></li>
-            <li><strong>Professional Certificate, Business Intelligence</strong> – Google: <a href="#" target="_blank">View Certificate</a></li>
-            <li><strong>Professional Certificate, Data Warehouse Engineer</strong> – IBM: <a href="#" target="_blank">View Certificate</a></li>
-            <li><strong>Specialization Certificate, Databases for Data Scientists</strong> – University of Colorado Boulder: <a href="#" target="_blank">View Certificate</a></li>
-            <li><strong>Certificate, Applied Data Science I: Scientific Computing & Python (with honors)</strong> – WorldQuant University: <a href="#" target="_blank">View Certificate</a></li>
-            <li><strong>Certificate, Macroeconometric Forecasting</strong> – IMF Institute of Capacity Development: <a href="#" target="_blank">View Certificate</a></li>
-        </ul>
+    <!-- Projects Section -->
+    <section class="projects fade-in" id="projects">
+        <h2>Data Science Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400" alt="Pneumonia Detection Model">
+                <h3>Pneumonia Detection Model</h3>
+                <p>A deep learning model using CNN that detects pneumonia from chest X-ray images.</p>
+                <p><strong>Tech Stack:</strong> Python, TensorFlow, OpenCV, Streamlit</p>
+                <div class="project-links">
+                    <a href="https://github.com/gibayee/gibayee.github.io/tree/main/pneumonia_detection" target="_blank">GitHub</a>
+                    <a href="https://pneumonia-xray-detector.streamlit.app/" target="_blank">Live Demo</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400" alt="Stock Market Prediction">
+                <h3>Real-Time Stock Market Prediction</h3>
+                <p>A deep learning model using LSTM to predict tomorrow's stock prices.</p>
+                <p><strong>Tech Stack:</strong> Python, Keras, Yahoo Finance API, Streamlit</p>
+                <div class="project-links">
+                    <a href="https://github.com/gibayee/gibayee.github.io/tree/main/stock_price_prediction" target="_blank">GitHub</a>
+                    <a href="https://stock-price-predictor-gibayee.streamlit.app/" target="_blank">Live Demo</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="contact" id="contact">
+    <!-- Certifications Section -->
+    <section class="certifications fade-in" id="certifications">
+        <h2>Certifications</h2>
+        <div class="certification-cards">
+            <div class="certification-card">
+                <h3>Professional Certificate, Machine Learning</h3>
+                <p>IBM</p>
+                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/ZA7KK7ZYLUE3" target="_blank">View Certificate</a>
+            </div>
+            <div class="certification-card">
+                <h3>Professional Certificate, Business Intelligence</h3>
+                <p>Google</p>
+                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/RQY3BPF779ER" target="_blank">View Certificate</a>
+            </div>
+            <div class="certification-card">
+                <h3>Professional Certificate, Data Warehouse Engineer</h3>
+                <p>IBM</p>
+                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/EX9NYQQ6NUQG" target="_blank">View Certificate</a>
+            </div>
+            <div class="certification-card">
+                <h3>Specialization Certificate, Databases for Data Scientists</h3>
+                <p>University of Colorado Boulder</p>
+                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/V4FFX38GVTHE" target="_blank">View Certificate</a>
+            </div>
+            <div class="certification-card">
+                <h3>Certificate, Applied Machine Learning in Python</h3>
+                <p>University of Michigan</p>
+                <a href="https://www.coursera.org/account/accomplishments/certificate/JA8KUJ3YNKXG" target="_blank">View Certificate</a>
+            </div>
+            <div class="certification-card">
+                <h3>Certificate, Applied Machine Learning in Python</h3>
+                <p>University of Michigan</p>
+                <a href="https://www.coursera.org/account/accomplishments/certificate/JA8KUJ3YNKXG" target="_blank">View Certificate</a>
+            </div>
+            <div class="certification-card">
+                <h3>Certificate, Applied Data Science I: Scientific Computing & Python (with honors)</h3>
+                <p>Worldquant University</p>
+                <a href="https://www.credly.com/badges/2468d5e6-101a-4ad8-a344-f9e64f06e555?source=linked_in_profile" target="_blank">View Certificate</a>
+            </div>
+            <div class="certification-card">
+                <h3>Certificate, Elements of Artificial Intellignece</h3>
+                <p>University of Helsinki</p>
+                <a href="https://certificates.mooc.fi/validate/g7vt4vv2t5h" target="_blank">View Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in" id="contact">
         <h2>Contact Me</h2>
-        <a href="mailto:gibayee@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/godfredbayee/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/gibayee" target="_blank">GitHub</a>
-        <a href="https://docs.google.com/document/d/1HgmiIXsxFHKHVVGFrtivtIkPvT7jD1z6/edit?usp=sharing" target="_blank">Resume</a>
+        <a href="mailto:gibayee@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://www.linkedin.com/in/godfredbayee/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/gibayee" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </section>
 
 </div>
 
 <footer>
-    © 2025 Godfred | All Rights
+    © 2025 Godfred | All Rights Reserved
+</footer>
+
+<button id="back-to-top" title="Go to top">↑</button>
+
+<script>
+    // Fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Back-to-top button
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("back-to-top").style.display = "block";
+        } else {
+            document.getElementById("back-to-top").style.display = "none";
+        }
+    };
+
+    document.getElementById("back-to-top").onclick = function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    };
+</script>
+
+</body>
+</html>
